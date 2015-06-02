@@ -1,18 +1,26 @@
 package com.richluick.materialtext;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    private android.support.v7.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.appBar);
+        setSupportActionBar(toolbar);
     }
 
     @Override
@@ -31,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast.makeText(this, "Settings", Toast.LENGTH_LONG).show();
             return true;
         }
 
